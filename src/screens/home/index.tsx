@@ -19,7 +19,10 @@ const Home: FC<RootStackScreenType<SCREENS.home>> = ({navigation}) => {
         style={{overflow: 'visible'}}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContainer}>
-        <ListBanners listCustomStiles={styles.listBanners} />
+        <ListBanners
+          listCustomStiles={styles.listBanners}
+          arrayBanners={listTrendingSerials}
+        />
         <ContinueWatching customStyles={styles.listSerials} />
         <ListSerials
           title="Trending Now"

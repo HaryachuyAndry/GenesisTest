@@ -4,6 +4,7 @@ export const listTrendingSerials: Array<ItemSerialType> = [
   {
     id: 's1',
     title: 'Bridgerton',
+    genre: 'Romance',
     subtitle: 'Julia Quinn',
     url: 'https://bestsimilar.com/img/movie/thumb/53/69101.jpg',
     available: '2024-3-7',
@@ -11,6 +12,7 @@ export const listTrendingSerials: Array<ItemSerialType> = [
   {
     id: 's2',
     title: 'American Heiress',
+    genre: 'Romance',
     subtitle: 'Daisy Goodwin',
     url: 'https://m.media-amazon.com/images/I/818HF8hhorL._AC_UF1000,1000_QL80_.jpg',
     available: '2024-5-5',
@@ -18,6 +20,7 @@ export const listTrendingSerials: Array<ItemSerialType> = [
   {
     id: 's3',
     title: 'One day',
+    genre: 'Romance',
     subtitle: 'David Nicholls',
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT_brSB0a_PoHqWRsWI-yHx_JIlKwck1sFwVfrC7_BuXvrboNpHsfDaH35FQRjL0n_tWs&usqp=CAU',
     available: '2024-5-5',
@@ -25,6 +28,7 @@ export const listTrendingSerials: Array<ItemSerialType> = [
   {
     id: 's4',
     title: 'Love at first sight',
+    genre: 'Romance',
     subtitle: 'Jennifer E. Smith',
     url: 'https://advanced-television.com/wp-content/uploads/2023/09/LoveFirst-netflix.jpg',
     available: '2024-5-14',
@@ -35,6 +39,7 @@ export const listRomanceSerials: Array<ItemSerialType> = [
   {
     id: 's3',
     title: 'One day',
+    genre: 'Romance',
     subtitle: 'David Nicholls',
     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT_brSB0a_PoHqWRsWI-yHx_JIlKwck1sFwVfrC7_BuXvrboNpHsfDaH35FQRjL0n_tWs&usqp=CAU',
     available: '2024-3-5',
@@ -43,6 +48,7 @@ export const listRomanceSerials: Array<ItemSerialType> = [
     id: 's1',
     title: 'Bridgerton',
     subtitle: 'Julia Quinn',
+    genre: 'Romance',
     url: 'https://bestsimilar.com/img/movie/thumb/53/69101.jpg',
     available: '2024-5-7',
   },
@@ -50,6 +56,7 @@ export const listRomanceSerials: Array<ItemSerialType> = [
     id: 's4',
     title: 'Love at first sight',
     subtitle: 'Jennifer E. Smith',
+    genre: 'Romance',
     url: 'https://advanced-television.com/wp-content/uploads/2023/09/LoveFirst-netflix.jpg',
     available: '2024-5-14',
   },
@@ -57,6 +64,7 @@ export const listRomanceSerials: Array<ItemSerialType> = [
     id: 's2',
     title: 'American Heiress',
     subtitle: 'Daisy Goodwin',
+    genre: 'Romance',
     url: 'https://m.media-amazon.com/images/I/818HF8hhorL._AC_UF1000,1000_QL80_.jpg',
     available: '2024-5-5',
   },

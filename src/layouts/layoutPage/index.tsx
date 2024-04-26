@@ -11,8 +11,8 @@ const PageLayout: FC<LayoutPageProps> = ({
   titlePage,
 }) => {
   return (
-    <View style={[styles.main, customStyles]}>
-      <SafeAreaView>
+    <SafeAreaView style={[styles.main, customStyles]}>
+      <View style={{flex: 1}}>
         <View style={styles.headerContainer}>
           <Text style={styles.textHeader}>{titlePage}</Text>
           <View>
@@ -22,8 +22,8 @@ const PageLayout: FC<LayoutPageProps> = ({
           </View>
         </View>
         {children}
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

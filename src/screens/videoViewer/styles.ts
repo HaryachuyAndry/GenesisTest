@@ -3,7 +3,7 @@ import {COLORS} from '../../assets/colors';
 import {FONT_FAMILIES} from '../../assets/fonts';
 
 export const styles = StyleSheet.create({
-  inner: {
+  container: {
     flex: 1,
     backgroundColor: '#000',
   },

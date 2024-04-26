@@ -71,14 +71,11 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
 
   const viewConfigRef = useRef({viewAreaCoveragePercentThreshold: 100});
 
-  const height =
-    Dimensions.get('screen').height -
-    useSafeAreaInsets().bottom -
-    useSafeAreaInsets().top;
+  const height = Dimensions.get('window').height;
 
   return (
-    <View style={styles.inner}>
-      <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
+      <View style={{flex: 1}}>
         <FlatList
           data={arrayVideos}
           ref={flatListRef}
@@ -101,8 +98,8 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
             />
           )}
         />
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 };
 

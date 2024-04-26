@@ -4,6 +4,7 @@ export type ItemSerialType = {
   title: string;
   subtitle: string;
   available: string;
+  genre: string;
 };
 
 export type EpisodeType = {

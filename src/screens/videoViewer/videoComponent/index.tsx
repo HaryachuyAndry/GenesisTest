@@ -1,4 +1,4 @@
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, ActivityIndicator} from 'react-native';
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {styles} from './styles';
 import Video, {OnLoadData, OnProgressData} from 'react-native-video';
@@ -30,6 +30,7 @@ const VideoComponent: FC<VideoComponentProps> = ({
   const [duration, setDuration] = useState<number>(0);
   const [play, setPlay] = useState<boolean>(false);
   const [showControl, setShowControl] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (currentElement === index) {
@@ -59,6 +60,7 @@ const VideoComponent: FC<VideoComponentProps> = ({
   };
 
   const onLoadEnd = (data: OnLoadData) => {
+    setLoading(false);
     setDuration(data.duration);
     setCurrentTime(data.currentTime);
   };
@@ -95,6 +97,17 @@ const VideoComponent: FC<VideoComponentProps> = ({
           onEnd={onEnd}
           muted
         />
+        {loading && (
+          <ActivityIndicator
+            size="large"
+            style={{
+              position: 'absolute',
+              alignSelf: 'center',
+              top: '50%',
+              transform: [{translateY: -25}],
+            }}
+          />
+        )}
       </Pressable>
 
       {showControl && (

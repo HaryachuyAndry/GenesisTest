@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    bottom: -4,
+    bottom: -12,
   },
   text: {
     color: COLORS.whiteGray,
