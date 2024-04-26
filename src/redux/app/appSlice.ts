@@ -1,15 +1,13 @@
 import {PayloadAction, createSelector, createSlice} from '@reduxjs/toolkit';
-import {EpisodeType, ItemSerialType} from '../../models/video';
+import {EpisodeType, SerialItemType} from '../../models/video';
 import {RootState} from '..';
 
 interface StateInterface {
-  serial: ItemSerialType | null;
+  serial: SerialItemType | null;
   episode: EpisodeType | null;
   time: number | null;
 }
 
-type CurrentSerialPayload = ItemSerialType;
-type CurrentEpisodePayload = EpisodeType;
 type CurrentTimePayload = number | null;
 
 const initialState: StateInterface = {
@@ -22,13 +20,10 @@ const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setCurrentSerial: (state, action: PayloadAction<CurrentSerialPayload>) => {
+    setCurrentSerial: (state, action: PayloadAction<SerialItemType>) => {
       state.serial = action.payload;
     },
-    setCurrentEpisode: (
-      state,
-      action: PayloadAction<CurrentEpisodePayload>,
-    ) => {
+    setCurrentEpisode: (state, action: PayloadAction<EpisodeType>) => {
       state.episode = action.payload;
     },
     setCurrentTime: (state, action: PayloadAction<CurrentTimePayload>) => {

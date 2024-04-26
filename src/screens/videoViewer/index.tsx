@@ -17,7 +17,7 @@ import {
   setCurrentSerial,
   setCurrentTime,
 } from '../../redux/app/appSlice';
-import {listDataSerials} from '../../mocData/listSerials';
+import {dataSerialsList} from '../../mocData/serialsList';
 
 const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
   navigation,
@@ -27,12 +27,12 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
 
   const {id, episode} = route.params;
 
-  const refFirstRender = useRef(false);
+  const firstRenderRef = useRef(false);
 
-  const arrayVideos =
-    listDataSerials[id as keyof typeof listDataSerials].listEpisodes;
+  const videosArray =
+    dataSerialsList[id as keyof typeof dataSerialsList].episodesList;
 
-  const indexLastEpisode = arrayVideos.findIndex(item => {
+  const lastEpisodeIndex = videosArray.findIndex(item => {
     return item.id === episode?.id;
   });
 
@@ -44,13 +44,13 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
     dispatch(setCurrentSerial(route.params));
     setTimeout(() => {
       flatListRef.current?.scrollToIndex({
-        index: indexLastEpisode === -1 ? 0 : indexLastEpisode,
+        index: lastEpisodeIndex === -1 ? 0 : lastEpisodeIndex,
         animated: false,
       });
     }, 300);
 
     setTimeout(() => {
-      refFirstRender.current = true;
+      firstRenderRef.current = true;
     }, 500);
   }, []);
 
@@ -63,8 +63,8 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
 
   const toggleScrollItem = (v: number) => {
     setCurrentElement(v);
-    dispatch(setCurrentEpisode(arrayVideos[v]));
-    if (refFirstRender.current) {
+    dispatch(setCurrentEpisode(videosArray[v]));
+    if (firstRenderRef.current) {
       dispatch(setCurrentTime(null));
     }
   };
@@ -80,7 +80,7 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
     <SafeAreaView style={styles.container}>
       <View style={{flex: 1}}>
         <FlatList
-          data={arrayVideos}
+          data={videosArray}
           ref={flatListRef}
           snapToAlignment={'center'}
           snapToInterval={height}
@@ -96,7 +96,7 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
               index={index}
               currentElement={currentElement}
               navigation={navigation}
-              dataVideo={item}
+              videoData={item}
               customHeight={height}
             />
           )}

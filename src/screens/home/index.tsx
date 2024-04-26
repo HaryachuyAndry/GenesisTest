@@ -1,38 +1,38 @@
-import {View, Text, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import React, {FC} from 'react';
 import {RootStackScreenType} from '../../navigation/RootNavigation/navigationTypes';
 import {SCREENS} from '../../navigation/screens';
-import PageLayout from '../../layouts/layoutPage';
-import ListBanners from '../../components/listBanners';
+import PageLayout from '../../layouts/PageLayout';
+import BannersList from '../../components/BannersList';
 import {styles} from './styles';
-import ListSerials from '../../components/listSerials';
-import ContinueWatching from '../../components/continueWatching';
+import SerialsList from '../../components/SerialsList';
+import ContinueWatching from '../../components/ContinueWatching';
 import {
-  listRomanceSerials,
-  listTrendingSerials,
-} from '../../mocData/listSerials';
+  romanceSerialsList,
+  trendingSerialsList,
+} from '../../mocData/serialsList';
 
-const Home: FC<RootStackScreenType<SCREENS.home>> = ({navigation}) => {
+const Home: FC<RootStackScreenType<SCREENS.home>> = () => {
   return (
-    <PageLayout titlePage="Home">
+    <PageLayout pageTitle="Home">
       <ScrollView
         style={{overflow: 'visible'}}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContainer}>
-        <ListBanners
-          listCustomStiles={styles.listBanners}
-          arrayBanners={listTrendingSerials}
+        <BannersList
+          customListStyles={styles.bannersList}
+          bannersArray={trendingSerialsList}
         />
-        <ContinueWatching customStyles={styles.listSerials} />
-        <ListSerials
+        <ContinueWatching customStyles={styles.serialsList} />
+        <SerialsList
           title="Trending Now"
-          listCustomStiles={styles.listSerials}
-          listSerials={listTrendingSerials}
+          customListStyles={styles.serialsList}
+          serialsList={trendingSerialsList}
         />
-        <ListSerials
+        <SerialsList
           title="Top Romance"
-          listCustomStiles={styles.listSerials}
-          listSerials={listRomanceSerials}
+          customListStyles={styles.serialsList}
+          serialsList={romanceSerialsList}
         />
       </ScrollView>
     </PageLayout>

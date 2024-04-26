@@ -4,7 +4,7 @@ import {styles} from './styles';
 import Video, {OnLoadData, OnProgressData} from 'react-native-video';
 import {SvgXml} from 'react-native-svg';
 import {ICONS} from '../../../assets/icons';
-import VideoControl from '../../../components/videoControl';
+import VideoControl from '../../../components/VideoControl';
 import {VideoComponentProps} from './types';
 import {useDispatch} from 'react-redux';
 import {
@@ -15,7 +15,7 @@ import {useTypedSelector} from '../../../redux/hooks/useTypedSelector';
 
 const VideoComponent: FC<VideoComponentProps> = ({
   navigation,
-  dataVideo,
+  videoData,
   customHeight,
   currentElement,
   index,
@@ -66,7 +66,6 @@ const VideoComponent: FC<VideoComponentProps> = ({
   };
 
   const onEnd = () => {
-    // videoRef.current?.seek(0);
     setPlay(false);
   };
 
@@ -84,7 +83,7 @@ const VideoComponent: FC<VideoComponentProps> = ({
         <Video
           ref={videoRef}
           source={{
-            uri: dataVideo.url,
+            uri: videoData.url,
           }}
           style={styles.video}
           resizeMode="contain"
@@ -118,7 +117,7 @@ const VideoComponent: FC<VideoComponentProps> = ({
               onPress={() => navigation.goBack()}>
               <SvgXml xml={ICONS.cross} />
             </Pressable>
-            <Text style={styles.title}>{dataVideo.title}</Text>
+            <Text style={styles.title}>{videoData.title}</Text>
           </View>
           <View style={styles.controlContainer}>
             <VideoControl

@@ -6,6 +6,12 @@ import {styles} from './styles';
 import Slider from '@react-native-community/slider';
 import {VideoControlProps} from './types';
 
+const getMinutesFromSeconds = (time: number) => {
+  const minutes = time >= 60 ? Math.floor(time / 60) : 0;
+  const seconds = Math.floor(time - minutes * 60);
+  return `${minutes >= 10 ? minutes : '0' + minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
+};
+
 const VideoControl: FC<VideoControlProps> = ({
   currentTime,
   duration,
@@ -15,12 +21,6 @@ const VideoControl: FC<VideoControlProps> = ({
   onPlay,
   play,
 }) => {
-  const getMinutesFromSeconds = (time: number) => {
-    const minutes = time >= 60 ? Math.floor(time / 60) : 0;
-    const seconds = Math.floor(time - minutes * 60);
-    return `${minutes >= 10 ? minutes : '0' + minutes}:${seconds >= 10 ? seconds : '0' + seconds}`;
-  };
-
   const position = getMinutesFromSeconds(currentTime);
   const fullDuration = getMinutesFromSeconds(duration);
 
@@ -31,7 +31,7 @@ const VideoControl: FC<VideoControlProps> = ({
         onPress={() => {
           onPlay(!play);
         }}>
-        {!play ? <SvgXml xml={ICONS.play} /> : <SvgXml xml={ICONS.pause} />}
+        <SvgXml xml={!play ? ICONS.play : ICONS.pause} />
       </Pressable>
       <View style={styles.progressContainer}>
         <Slider

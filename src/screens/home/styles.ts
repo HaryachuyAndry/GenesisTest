@@ -4,10 +4,10 @@ export const styles = StyleSheet.create({
   scrollContainer: {
     paddingBottom: 30,
   },
-  listBanners: {
+  bannersList: {
     marginTop: 18,
   },
-  listSerials: {
+  serialsList: {
     marginTop: 32,
   },
 });

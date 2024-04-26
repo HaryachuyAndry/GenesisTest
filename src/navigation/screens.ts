@@ -1,4 +1,4 @@
 export enum SCREENS {
   home = 'HOME_SCREEN',
-  videoViewer = 'videoViewer',
+  videoViewer = 'VIDEO_VIEWER',
 }

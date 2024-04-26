@@ -1,4 +1,4 @@
-export type ItemSerialType = {
+export type SerialItemType = {
   id: string;
   url: string;
   title: string;

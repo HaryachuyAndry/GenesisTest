@@ -25,7 +25,7 @@ const ContinueWatching: FC<ContinueWatchingProps> = ({customStyles}) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const dispatch = useDispatch();
 
-  var swipeoutBtns = [
+  const swipeoutBtns = [
     {
       text: 'Delete',
       backgroundColor: 'rgba(0,0,0,0)',
@@ -34,6 +34,7 @@ const ContinueWatching: FC<ContinueWatchingProps> = ({customStyles}) => {
       },
     },
   ];
+
   if (!!serial && !!episode && !isNull(time)) {
     return (
       <View style={[styles.inner, customStyles]}>

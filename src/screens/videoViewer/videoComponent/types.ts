@@ -6,6 +6,6 @@ export type VideoComponentProps = {
   index: number;
   currentElement: number;
   navigation: NavigationProp<RootStackParamList>;
-  dataVideo: EpisodeType;
+  videoData: EpisodeType;
   customHeight: number;
 };
