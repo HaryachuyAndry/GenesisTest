@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-swipeout/index.d.ts b/node_modules/react-native-swipeout/index.d.ts
+index e8364b7..94a5a3a 100644
+--- a/node_modules/react-native-swipeout/index.d.ts
++++ b/node_modules/react-native-swipeout/index.d.ts
+@@ -29,6 +29,7 @@ declare module 'react-native-swipeout' {
+         sectionId?: number;
+         openRight?: boolean;
+         openLeft?: boolean;
++        children:React.ReactNode
+     }
+ 
+     export default class Swipeout extends React.Component<SwipeoutProperties,any> {}
