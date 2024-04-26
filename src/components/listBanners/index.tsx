@@ -14,14 +14,8 @@ const ListBanners: FC<ListBannersProps> = ({
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={[styles.inner, listCustomStiles]}
       style={{overflow: 'visible'}}>
-      {arrayBanners.map(({id, genre, title, subtitle, url}) => (
-        <ItemBanner
-          key={id}
-          genre={genre}
-          title={title}
-          subtitle={subtitle}
-          image={url}
-        />
+      {arrayBanners.map(item => (
+        <ItemBanner data={item} />
       ))}
     </ScrollView>
   );

@@ -45,7 +45,7 @@ const VideoComponent: FC<VideoComponentProps> = ({
   useEffect(() => {
     play &&
       setTimeout(() => {
-        setShowControl(false);
+        setShowControl(true);
       }, 10000);
   }, [play]);
 

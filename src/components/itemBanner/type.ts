@@ -1,6 +1,5 @@
+import {ItemSerialType} from '../../models/video';
+
 export type ItemBannerProps = {
-  title: string;
-  genre: string;
-  subtitle: string;
-  image: string;
+  data: ItemSerialType;
 };

@@ -71,7 +71,10 @@ const VideoViewer: FC<RootStackScreenType<SCREENS.videoViewer>> = ({
 
   const viewConfigRef = useRef({viewAreaCoveragePercentThreshold: 100});
 
-  const height = Dimensions.get('window').height;
+  const height =
+    Dimensions.get('window').height -
+    useSafeAreaInsets().bottom -
+    useSafeAreaInsets().top;
 
   return (
     <SafeAreaView style={styles.container}>

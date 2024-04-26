@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     marginHorizontal: 16,
-    marginTop: 4,
+    marginTop: 26,
     justifyContent: 'center',
   },
   title: {
@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   controlContainer: {
-    marginBottom: 8,
+    marginBottom: 26,
     marginHorizontal: 16,
   },
   btnVideo: {
